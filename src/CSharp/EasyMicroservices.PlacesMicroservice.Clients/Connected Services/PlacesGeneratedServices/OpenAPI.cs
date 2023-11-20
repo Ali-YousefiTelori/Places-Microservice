@@ -6025,6 +6025,7 @@ namespace Places.GeneratedServices
         private double _latitude;
         private double _longitude;
         private string _uniqueIdentity;
+        private long _countryId;
 
         [Newtonsoft.Json.JsonProperty("names", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<LanguageDataContract> Names
@@ -6081,6 +6082,21 @@ namespace Places.GeneratedServices
                 if (_uniqueIdentity != value)
                 {
                     _uniqueIdentity = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        [Newtonsoft.Json.JsonProperty("countryId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long CountryId
+        {
+            get { return _countryId; }
+
+            set
+            {
+                if (_countryId != value)
+                {
+                    _countryId = value;
                     RaisePropertyChanged();
                 }
             }
@@ -7070,6 +7086,7 @@ namespace Places.GeneratedServices
         private System.DateTimeOffset? _modificationDateTime;
         private System.DateTimeOffset? _deletedDateTime;
         private bool _isDeleted;
+        private long _countryId;
         private long _id;
         private string _name;
 
@@ -7173,6 +7190,21 @@ namespace Places.GeneratedServices
                 if (_isDeleted != value)
                 {
                     _isDeleted = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        [Newtonsoft.Json.JsonProperty("countryId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long CountryId
+        {
+            get { return _countryId; }
+
+            set
+            {
+                if (_countryId != value)
+                {
+                    _countryId = value;
                     RaisePropertyChanged();
                 }
             }
@@ -7416,6 +7448,7 @@ namespace Places.GeneratedServices
         private System.DateTimeOffset? _modificationDateTime;
         private System.DateTimeOffset? _deletedDateTime;
         private bool _isDeleted;
+        private long _countryId;
         private long _id;
         private System.Collections.Generic.ICollection<LanguageDataContract> _names;
 
@@ -7519,6 +7552,21 @@ namespace Places.GeneratedServices
                 if (_isDeleted != value)
                 {
                     _isDeleted = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        [Newtonsoft.Json.JsonProperty("countryId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long CountryId
+        {
+            get { return _countryId; }
+
+            set
+            {
+                if (_countryId != value)
+                {
+                    _countryId = value;
                     RaisePropertyChanged();
                 }
             }
@@ -8085,6 +8133,7 @@ namespace Places.GeneratedServices
         private double _latitude;
         private double _longitude;
         private string _uniqueIdentity;
+        private long _countryId;
         private long _id;
 
         [Newtonsoft.Json.JsonProperty("names", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
@@ -8142,6 +8191,21 @@ namespace Places.GeneratedServices
                 if (_uniqueIdentity != value)
                 {
                     _uniqueIdentity = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        [Newtonsoft.Json.JsonProperty("countryId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long CountryId
+        {
+            get { return _countryId; }
+
+            set
+            {
+                if (_countryId != value)
+                {
+                    _countryId = value;
                     RaisePropertyChanged();
                 }
             }

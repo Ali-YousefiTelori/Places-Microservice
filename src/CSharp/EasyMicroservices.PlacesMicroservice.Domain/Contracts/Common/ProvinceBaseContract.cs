@@ -13,5 +13,7 @@ namespace EasyMicroservices.PlacesMicroservice.Contracts.Common
         public DateTime? ModificationDateTime { get; set; }
         public DateTime? DeletedDateTime { get; set; }
         public bool IsDeleted { get; set; }
+
+        public long CountryId { get; set; }
     }
 }

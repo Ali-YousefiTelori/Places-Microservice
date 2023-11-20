@@ -15,5 +15,7 @@ namespace EasyMicroservices.PlacesMicroservice.Contracts.Requests
         public double Longitude { get; set; }
 
         public string UniqueIdentity { get; set; }
+
+        public long CountryId { get; set; }
     }
 }

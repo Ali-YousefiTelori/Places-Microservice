@@ -2949,6 +2949,10 @@
           "uniqueIdentity": {
             "type": "string",
             "nullable": true
+          },
+          "countryId": {
+            "type": "integer",
+            "format": "int64"
           }
         }
       },
@@ -3348,6 +3352,10 @@
           "isDeleted": {
             "type": "boolean"
           },
+          "countryId": {
+            "type": "integer",
+            "format": "int64"
+          },
           "id": {
             "type": "integer",
             "format": "int64"
@@ -3443,6 +3451,10 @@
           },
           "isDeleted": {
             "type": "boolean"
+          },
+          "countryId": {
+            "type": "integer",
+            "format": "int64"
           },
           "id": {
             "type": "integer",
@@ -3644,6 +3656,10 @@
           "uniqueIdentity": {
             "type": "string",
             "nullable": true
+          },
+          "countryId": {
+            "type": "integer",
+            "format": "int64"
           },
           "id": {
             "type": "integer",
