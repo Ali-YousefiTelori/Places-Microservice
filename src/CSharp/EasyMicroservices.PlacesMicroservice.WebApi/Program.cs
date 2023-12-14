@@ -1,7 +1,6 @@
-using EasyMicroservices.PlacesMicroservice.Database.Contexts;
 using EasyMicroservices.Cores.AspEntityFrameworkCoreApi;
 using EasyMicroservices.Cores.Relational.EntityFrameworkCore.Intrerfaces;
-using EasyMicroservices.Cores.AspEntityFrameworkCoreApi.Interfaces;
+using EasyMicroservices.PlacesMicroservice.Database.Contexts;
 
 namespace EasyMicroservices.PlacesMicroservice.WebApi
 {
@@ -10,13 +9,8 @@ namespace EasyMicroservices.PlacesMicroservice.WebApi
         public static async Task Main(string[] args)
         {
             var app = CreateBuilder(args);
-            var build = await app.Build<PlacesContext>();
+            var build = await app.BuildWithUseCors<PlacesContext>(null, true);
             build.MapControllers();
-            build.UseCors(x => x
-            .AllowAnyMethod()
-            .AllowAnyHeader()
-            .AllowCredentials()
-            .SetIsOriginAllowed(origin => true));
             build.Run();
         }
 
@@ -24,10 +18,11 @@ namespace EasyMicroservices.PlacesMicroservice.WebApi
         {
             var app = StartUpExtensions.Create<PlacesContext>(args);
             app.Services.Builder<PlacesContext>();
-            app.Services.AddScoped((serviceProvider) => new UnitOfWork(serviceProvider));
+            app.Services.AddTransient((serviceProvider) => new UnitOfWork(serviceProvider));
+            app.Services.AddTransient<IEntityFrameworkCoreDatabaseBuilder>(serviceProvider => new DatabaseBuilder(serviceProvider.GetService<IConfiguration>()));
             app.Services.AddTransient(serviceProvider => new PlacesContext(serviceProvider.GetService<IEntityFrameworkCoreDatabaseBuilder>()));
-            app.Services.AddScoped<IEntityFrameworkCoreDatabaseBuilder>(serviceProvider => new DatabaseBuilder(serviceProvider.GetService<IConfiguration>()));
 
+            StartUpExtensions.AddAuthentication("RootAddresses:Authentication");
             StartUpExtensions.AddWhiteLabel("Places", "RootAddresses:WhiteLabel");
             return app;
         }
