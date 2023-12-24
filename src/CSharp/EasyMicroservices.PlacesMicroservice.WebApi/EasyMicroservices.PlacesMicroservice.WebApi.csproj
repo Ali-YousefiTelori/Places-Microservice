@@ -14,9 +14,21 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EasyMicroservices.PlacesMicroservice.StartUp\EasyMicroservices.PlacesMicroservice.StartUp.csproj" />
+    <ProjectReference Include="..\EasyMicroservices.PlacesMicroservice.Logics\EasyMicroservices.PlacesMicroservice.Logics.csproj" />
   </ItemGroup>
 
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net8.0' ">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net7.0' ">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.14" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0'">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.25" />
+  </ItemGroup>
+  
 	<ItemGroup>
 		<Content Update="appsettings.json" CopyToPublishDirectory="Never" />
 		<Content Update="appsettings.*.json" CopyToPublishDirectory="Never" />
