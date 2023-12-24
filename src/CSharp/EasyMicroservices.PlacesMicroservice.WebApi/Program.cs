@@ -19,7 +19,7 @@ namespace EasyMicroservices.PlacesMicroservice.WebApi
             var app = StartUpExtensions.Create<PlacesContext>(args);
             app.Services.Builder<PlacesContext>();
             app.Services.AddTransient((serviceProvider) => new UnitOfWork(serviceProvider));
-            app.Services.AddTransient<IEntityFrameworkCoreDatabaseBuilder>(serviceProvider => new DatabaseBuilder(serviceProvider.GetService<IConfiguration>()));
+            app.Services.AddTransient<IEntityFrameworkCoreDatabaseBuilder, DatabaseBuilder>();
             app.Services.AddTransient(serviceProvider => new PlacesContext(serviceProvider.GetService<IEntityFrameworkCoreDatabaseBuilder>()));
 
             StartUpExtensions.AddAuthentication("RootAddresses:Authentication");

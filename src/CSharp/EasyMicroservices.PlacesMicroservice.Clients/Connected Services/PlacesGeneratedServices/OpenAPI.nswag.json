@@ -54,27 +54,27 @@
         }
       }
     },
-    "/api/City/Filter": {
+    "/api/City/AddBulk": {
       "post": {
         "tags": [
           "City"
         ],
-        "operationId": "Filter",
+        "operationId": "AddBulk",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/FilterRequestContract"
+                "$ref": "#/components/schemas/CreateCityRequestContractCreateBulkRequestContract"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/FilterRequestContract"
+                "$ref": "#/components/schemas/CreateCityRequestContractCreateBulkRequestContract"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/FilterRequestContract"
+                "$ref": "#/components/schemas/CreateCityRequestContractCreateBulkRequestContract"
               }
             }
           }
@@ -85,17 +85,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/CityContractListMessageContract"
+                  "$ref": "#/components/schemas/MessageContract"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CityContractListMessageContract"
+                  "$ref": "#/components/schemas/MessageContract"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CityContractListMessageContract"
+                  "$ref": "#/components/schemas/MessageContract"
                 }
               }
             }
@@ -194,153 +194,6 @@
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/CityContractMessageContract"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/City/GetAllByLanguage": {
-      "post": {
-        "tags": [
-          "City"
-        ],
-        "operationId": "GetAllByLanguage",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GetByLanguageRequestContract"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GetByLanguageRequestContract"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/GetByLanguageRequestContract"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/CityContractListMessageContract"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CityContractListMessageContract"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CityContractListMessageContract"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/City/GetByIdAllLanguage": {
-      "post": {
-        "tags": [
-          "City"
-        ],
-        "operationId": "GetByIdAllLanguage",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Int64GetIdRequestContract"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Int64GetIdRequestContract"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Int64GetIdRequestContract"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/CityLanguageContractMessageContract"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CityLanguageContractMessageContract"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CityLanguageContractMessageContract"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/City/AddBulk": {
-      "post": {
-        "tags": [
-          "City"
-        ],
-        "operationId": "AddBulk",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateCityRequestContractCreateBulkRequestContract"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateCityRequestContractCreateBulkRequestContract"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateCityRequestContractCreateBulkRequestContract"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/MessageContract"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MessageContract"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MessageContract"
                 }
               }
             }
@@ -652,17 +505,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+                "$ref": "#/components/schemas/Int64GetByIdLanguageRequestContract"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+                "$ref": "#/components/schemas/Int64GetByIdLanguageRequestContract"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+                "$ref": "#/components/schemas/Int64GetByIdLanguageRequestContract"
               }
             }
           }
@@ -691,6 +544,55 @@
         }
       }
     },
+    "/api/City/GetByIdAllLanguage": {
+      "post": {
+        "tags": [
+          "City"
+        ],
+        "operationId": "GetByIdAllLanguage",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64GetByIdRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64GetByIdRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64GetByIdRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CityLanguageContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CityLanguageContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CityLanguageContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/City/GetByUniqueIdentity": {
       "post": {
         "tags": [
@@ -701,17 +603,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityLanguageRequestContract"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityLanguageRequestContract"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityLanguageRequestContract"
               }
             }
           }
@@ -733,6 +635,153 @@
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/CityContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/City/GetByUniqueIdentityAllLanguage": {
+      "post": {
+        "tags": [
+          "City"
+        ],
+        "operationId": "GetByUniqueIdentityAllLanguage",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CityLanguageContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CityLanguageContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CityLanguageContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/City/Filter": {
+      "post": {
+        "tags": [
+          "City"
+        ],
+        "operationId": "Filter",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CityContractListMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CityContractListMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CityContractListMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/City/FilterAllLanguage": {
+      "post": {
+        "tags": [
+          "City"
+        ],
+        "operationId": "FilterAllLanguage",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CityLanguageContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CityLanguageContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CityLanguageContractMessageContract"
                 }
               }
             }
@@ -770,6 +819,36 @@
         }
       }
     },
+    "/api/City/GetAllWithAllLanguage": {
+      "post": {
+        "tags": [
+          "City"
+        ],
+        "operationId": "GetAllWithAllLanguage",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CityLanguageContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CityLanguageContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CityLanguageContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/City/GetAllByUniqueIdentity": {
       "post": {
         "tags": [
@@ -780,17 +859,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityLanguageRequestContract"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityLanguageRequestContract"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityLanguageRequestContract"
               }
             }
           }
@@ -812,6 +891,55 @@
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/CityContractListMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/City/GetAllByUniqueIdentityAllLanguage": {
+      "post": {
+        "tags": [
+          "City"
+        ],
+        "operationId": "GetAllByUniqueIdentityAllLanguage",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CityLanguageContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CityLanguageContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CityLanguageContractMessageContract"
                 }
               }
             }
@@ -868,27 +996,27 @@
         }
       }
     },
-    "/api/Country/Filter": {
+    "/api/Country/AddBulk": {
       "post": {
         "tags": [
           "Country"
         ],
-        "operationId": "Filter2",
+        "operationId": "AddBulk2",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/FilterRequestContract"
+                "$ref": "#/components/schemas/CreateCountryRequestContractCreateBulkRequestContract"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/FilterRequestContract"
+                "$ref": "#/components/schemas/CreateCountryRequestContractCreateBulkRequestContract"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/FilterRequestContract"
+                "$ref": "#/components/schemas/CreateCountryRequestContractCreateBulkRequestContract"
               }
             }
           }
@@ -899,17 +1027,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/CountryContractListMessageContract"
+                  "$ref": "#/components/schemas/MessageContract"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CountryContractListMessageContract"
+                  "$ref": "#/components/schemas/MessageContract"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CountryContractListMessageContract"
+                  "$ref": "#/components/schemas/MessageContract"
                 }
               }
             }
@@ -1008,153 +1136,6 @@
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/CountryContractMessageContract"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Country/GetAllByLanguage": {
-      "post": {
-        "tags": [
-          "Country"
-        ],
-        "operationId": "GetAllByLanguage2",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GetByLanguageRequestContract"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GetByLanguageRequestContract"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/GetByLanguageRequestContract"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/CountryContractListMessageContract"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CountryContractListMessageContract"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CountryContractListMessageContract"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Country/GetByIdAllLanguage": {
-      "post": {
-        "tags": [
-          "Country"
-        ],
-        "operationId": "GetByIdAllLanguage2",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Int64GetIdRequestContract"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Int64GetIdRequestContract"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Int64GetIdRequestContract"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/CountryLanguageContractMessageContract"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CountryLanguageContractMessageContract"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CountryLanguageContractMessageContract"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Country/AddBulk": {
-      "post": {
-        "tags": [
-          "Country"
-        ],
-        "operationId": "AddBulk2",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateCountryRequestContractCreateBulkRequestContract"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateCountryRequestContractCreateBulkRequestContract"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateCountryRequestContractCreateBulkRequestContract"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/MessageContract"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MessageContract"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MessageContract"
                 }
               }
             }
@@ -1466,17 +1447,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+                "$ref": "#/components/schemas/Int64GetByIdLanguageRequestContract"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+                "$ref": "#/components/schemas/Int64GetByIdLanguageRequestContract"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+                "$ref": "#/components/schemas/Int64GetByIdLanguageRequestContract"
               }
             }
           }
@@ -1505,6 +1486,55 @@
         }
       }
     },
+    "/api/Country/GetByIdAllLanguage": {
+      "post": {
+        "tags": [
+          "Country"
+        ],
+        "operationId": "GetByIdAllLanguage2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64GetByIdRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64GetByIdRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64GetByIdRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountryLanguageContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountryLanguageContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountryLanguageContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Country/GetByUniqueIdentity": {
       "post": {
         "tags": [
@@ -1515,17 +1545,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityLanguageRequestContract"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityLanguageRequestContract"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityLanguageRequestContract"
               }
             }
           }
@@ -1547,6 +1577,153 @@
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/CountryContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Country/GetByUniqueIdentityAllLanguage": {
+      "post": {
+        "tags": [
+          "Country"
+        ],
+        "operationId": "GetByUniqueIdentityAllLanguage2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountryLanguageContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountryLanguageContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountryLanguageContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Country/Filter": {
+      "post": {
+        "tags": [
+          "Country"
+        ],
+        "operationId": "Filter2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountryContractListMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountryContractListMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountryContractListMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Country/FilterAllLanguage": {
+      "post": {
+        "tags": [
+          "Country"
+        ],
+        "operationId": "FilterAllLanguage2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountryLanguageContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountryLanguageContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountryLanguageContractMessageContract"
                 }
               }
             }
@@ -1584,6 +1761,36 @@
         }
       }
     },
+    "/api/Country/GetAllWithAllLanguage": {
+      "post": {
+        "tags": [
+          "Country"
+        ],
+        "operationId": "GetAllWithAllLanguage2",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountryLanguageContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountryLanguageContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountryLanguageContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Country/GetAllByUniqueIdentity": {
       "post": {
         "tags": [
@@ -1594,17 +1801,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityLanguageRequestContract"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityLanguageRequestContract"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityLanguageRequestContract"
               }
             }
           }
@@ -1626,6 +1833,55 @@
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/CountryContractListMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Country/GetAllByUniqueIdentityAllLanguage": {
+      "post": {
+        "tags": [
+          "Country"
+        ],
+        "operationId": "GetAllByUniqueIdentityAllLanguage2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountryLanguageContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountryLanguageContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountryLanguageContractMessageContract"
                 }
               }
             }
@@ -1682,27 +1938,27 @@
         }
       }
     },
-    "/api/Province/Filter": {
+    "/api/Province/AddBulk": {
       "post": {
         "tags": [
           "Province"
         ],
-        "operationId": "Filter3",
+        "operationId": "AddBulk3",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/FilterRequestContract"
+                "$ref": "#/components/schemas/CreateProvinceRequestContractCreateBulkRequestContract"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/FilterRequestContract"
+                "$ref": "#/components/schemas/CreateProvinceRequestContractCreateBulkRequestContract"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/FilterRequestContract"
+                "$ref": "#/components/schemas/CreateProvinceRequestContractCreateBulkRequestContract"
               }
             }
           }
@@ -1713,17 +1969,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProvinceContractListMessageContract"
+                  "$ref": "#/components/schemas/MessageContract"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProvinceContractListMessageContract"
+                  "$ref": "#/components/schemas/MessageContract"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProvinceContractListMessageContract"
+                  "$ref": "#/components/schemas/MessageContract"
                 }
               }
             }
@@ -1822,153 +2078,6 @@
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProvinceContractMessageContract"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Province/GetAllByLanguage": {
-      "post": {
-        "tags": [
-          "Province"
-        ],
-        "operationId": "GetAllByLanguage3",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GetByLanguageRequestContract"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GetByLanguageRequestContract"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/GetByLanguageRequestContract"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProvinceContractListMessageContract"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProvinceContractListMessageContract"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProvinceContractListMessageContract"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Province/GetByIdAllLanguage": {
-      "post": {
-        "tags": [
-          "Province"
-        ],
-        "operationId": "GetByIdAllLanguage3",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Int64GetIdRequestContract"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Int64GetIdRequestContract"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Int64GetIdRequestContract"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProvinceLanguageContractMessageContract"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProvinceLanguageContractMessageContract"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProvinceLanguageContractMessageContract"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Province/AddBulk": {
-      "post": {
-        "tags": [
-          "Province"
-        ],
-        "operationId": "AddBulk3",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateProvinceRequestContractCreateBulkRequestContract"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateProvinceRequestContractCreateBulkRequestContract"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateProvinceRequestContractCreateBulkRequestContract"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/MessageContract"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MessageContract"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MessageContract"
                 }
               }
             }
@@ -2280,17 +2389,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+                "$ref": "#/components/schemas/Int64GetByIdLanguageRequestContract"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+                "$ref": "#/components/schemas/Int64GetByIdLanguageRequestContract"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+                "$ref": "#/components/schemas/Int64GetByIdLanguageRequestContract"
               }
             }
           }
@@ -2319,6 +2428,55 @@
         }
       }
     },
+    "/api/Province/GetByIdAllLanguage": {
+      "post": {
+        "tags": [
+          "Province"
+        ],
+        "operationId": "GetByIdAllLanguage3",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64GetByIdRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64GetByIdRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64GetByIdRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProvinceLanguageContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProvinceLanguageContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProvinceLanguageContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Province/GetByUniqueIdentity": {
       "post": {
         "tags": [
@@ -2329,17 +2487,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityLanguageRequestContract"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityLanguageRequestContract"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityLanguageRequestContract"
               }
             }
           }
@@ -2361,6 +2519,153 @@
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProvinceContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Province/GetByUniqueIdentityAllLanguage": {
+      "post": {
+        "tags": [
+          "Province"
+        ],
+        "operationId": "GetByUniqueIdentityAllLanguage3",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProvinceLanguageContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProvinceLanguageContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProvinceLanguageContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Province/Filter": {
+      "post": {
+        "tags": [
+          "Province"
+        ],
+        "operationId": "Filter3",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProvinceContractListMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProvinceContractListMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProvinceContractListMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Province/FilterAllLanguage": {
+      "post": {
+        "tags": [
+          "Province"
+        ],
+        "operationId": "FilterAllLanguage3",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProvinceLanguageContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProvinceLanguageContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProvinceLanguageContractMessageContract"
                 }
               }
             }
@@ -2398,6 +2703,36 @@
         }
       }
     },
+    "/api/Province/GetAllWithAllLanguage": {
+      "post": {
+        "tags": [
+          "Province"
+        ],
+        "operationId": "GetAllWithAllLanguage3",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProvinceLanguageContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProvinceLanguageContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProvinceLanguageContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Province/GetAllByUniqueIdentity": {
       "post": {
         "tags": [
@@ -2408,17 +2743,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityLanguageRequestContract"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityLanguageRequestContract"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityLanguageRequestContract"
               }
             }
           }
@@ -2440,6 +2775,55 @@
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProvinceContractListMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Province/GetAllByUniqueIdentityAllLanguage": {
+      "post": {
+        "tags": [
+          "Province"
+        ],
+        "operationId": "GetAllByUniqueIdentityAllLanguage3",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProvinceLanguageContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProvinceLanguageContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProvinceLanguageContractMessageContract"
                 }
               }
             }
@@ -3126,41 +3510,41 @@
             "nullable": true
           },
           "sortColumnNames": {
-            "type": "string",
-            "nullable": true
-          },
-          "isDescending": {
-            "type": "boolean"
+            "title": "List<SortColumnStrategyContract>",
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/SortColumnStrategyContract"
+            }
           },
           "text": {
             "type": "string",
             "nullable": true
           },
-          "language": {
+          "languageShortName": {
             "type": "string",
             "nullable": true
           }
         }
       },
-      "GetByLanguageRequestContract": {
+      "GetByUniqueIdentityLanguageRequestContract": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "language": {
-            "type": "string",
-            "nullable": true
-          },
-          "key": {
-            "type": "string",
-            "nullable": true
-          },
           "uniqueIdentity": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/GetUniqueIdentityType"
+          },
+          "languageShortName": {
             "type": "string",
             "nullable": true
           }
         }
       },
-      "GetUniqueIdentityRequestContract": {
+      "GetByUniqueIdentityRequestContract": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -3224,8 +3608,23 @@
           }
         }
       },
-      "Int64GetIdRequestContract": {
-        "title": "GetIdRequestContract<Int64>",
+      "Int64GetByIdLanguageRequestContract": {
+        "title": "GetByIdLanguageRequestContract<Int64>",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "languageShortName": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "Int64GetByIdRequestContract": {
+        "title": "GetByIdRequestContract<Int64>",
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -3508,6 +3907,25 @@
           "projectName": {
             "type": "string",
             "nullable": true
+          }
+        }
+      },
+      "SortColumnStrategyContract": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "columnName": {
+            "type": "string",
+            "nullable": true
+          },
+          "isDescending": {
+            "title": "Nullable<Boolean>",
+            "type": "boolean",
+            "nullable": true
+          },
+          "index": {
+            "type": "integer",
+            "format": "int32"
           }
         }
       },
