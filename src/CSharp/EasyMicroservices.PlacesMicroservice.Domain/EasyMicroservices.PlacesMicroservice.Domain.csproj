@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="EasyMicroservices.Cores.AspEntityFrameworkCoreApi" Version="0.0.0.70" />
+    <PackageReference Include="EasyMicroservices.Cores.AspEntityFrameworkCoreApi" Version="0.0.0.71" />
     <PackageReference Include="EasyMicroservices.ContentsMicroservice.Clients" Version="0.0.0.20" />
   </ItemGroup>
 

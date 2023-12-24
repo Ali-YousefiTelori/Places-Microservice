@@ -15,7 +15,7 @@ namespace EasyMicroservices.PlacesMicroservice
             if (name == "SqlServer")
                 optionsBuilder.UseSqlServer(Configuration.GetConnectionString("local"));
             else
-                optionsBuilder.UseInMemoryDatabase("WhiteLabels");
+                optionsBuilder.UseInMemoryDatabase("Places");
         }
     }
 }
