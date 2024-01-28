@@ -30,10 +30,10 @@
   </ItemGroup>
   
 	<ItemGroup>
-		<Content Update="appsettings.json" CopyToPublishDirectory="Never" />
+    <Content Update="web.config" CopyToPublishDirectory="Never" />
+    <Content Update="appsettings.json" CopyToPublishDirectory="Never" />
 		<Content Update="appsettings.*.json" CopyToPublishDirectory="Never" />
 		<Content Update="appsettings.$(MSBuildThisFileName).json" CopyToPublishDirectory="PreserveNewest" />
 	</ItemGroup>
-
 
 </Project>

@@ -17,13 +17,11 @@ namespace EasyMicroservices.PlacesMicroservice.WebApi
         static WebApplicationBuilder CreateBuilder(string[] args)
         {
             var app = StartUpExtensions.Create<PlacesContext>(args);
-            app.Services.Builder<PlacesContext>();
+            app.Services.Builder<PlacesContext>("Places")
+                .UseDefaultSwaggerOptions();
             app.Services.AddTransient((serviceProvider) => new UnitOfWork(serviceProvider));
             app.Services.AddTransient<IEntityFrameworkCoreDatabaseBuilder, DatabaseBuilder>();
             app.Services.AddTransient(serviceProvider => new PlacesContext(serviceProvider.GetService<IEntityFrameworkCoreDatabaseBuilder>()));
-
-            StartUpExtensions.AddAuthentication("RootAddresses:Authentication");
-            StartUpExtensions.AddWhiteLabel("Places", "RootAddresses:WhiteLabel");
             return app;
         }
     }
