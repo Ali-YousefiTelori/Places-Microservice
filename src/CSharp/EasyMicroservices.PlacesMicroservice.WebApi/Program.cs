@@ -19,7 +19,6 @@ namespace EasyMicroservices.PlacesMicroservice.WebApi
             var app = StartUpExtensions.Create<PlacesContext>(args);
             app.Services.Builder<PlacesContext>("Places")
                 .UseDefaultSwaggerOptions();
-            app.Services.AddTransient((serviceProvider) => new UnitOfWork(serviceProvider));
             app.Services.AddTransient<IEntityFrameworkCoreDatabaseBuilder, DatabaseBuilder>();
             app.Services.AddTransient(serviceProvider => new PlacesContext(serviceProvider.GetService<IEntityFrameworkCoreDatabaseBuilder>()));
             return app;
