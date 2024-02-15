@@ -1,11 +1,10 @@
 using EasyMicroservices.Cores.AspEntityFrameworkCoreApi;
-using EasyMicroservices.Cores.Database.Interfaces;
-using EasyMicroservices.Cores.Database.Logics;
 using EasyMicroservices.Cores.Database.Widgets;
+using EasyMicroservices.Cores.Interfaces;
 using EasyMicroservices.Cores.Relational.EntityFrameworkCore.Intrerfaces;
 using EasyMicroservices.PlacesMicroservice.Database.Contexts;
 using EasyMicroservices.PlacesMicroservice.Reporting.Widgets;
-using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace EasyMicroservices.PlacesMicroservice.WebApi
 {
@@ -26,8 +25,12 @@ namespace EasyMicroservices.PlacesMicroservice.WebApi
                 .UseDefaultSwaggerOptions();
             app.Services.AddTransient<IEntityFrameworkCoreDatabaseBuilder, DatabaseBuilder>();
             app.Services.AddTransient(serviceProvider => new PlacesContext(serviceProvider.GetService<IEntityFrameworkCoreDatabaseBuilder>()));
-            app.Services.AddSingleton<ReportingBuilderWidget, PlacesReportingWidgetBuilder>();
-            
+            var descriptor = new ServiceDescriptor(
+                                typeof(IWidgetBuilder),
+                                typeof(PlacesReportingWidgetBuilder),
+                                ServiceLifetime.Singleton);
+            app.Services.Replace(descriptor);
+
             return app;
         }
     }

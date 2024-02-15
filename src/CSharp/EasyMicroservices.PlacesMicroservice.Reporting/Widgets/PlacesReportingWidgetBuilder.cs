@@ -1,5 +1,4 @@
-﻿using EasyMicroservices.Cores.Database.Interfaces;
-using EasyMicroservices.Cores.Database.Widgets;
+﻿using EasyMicroservices.Cores.Interfaces;
 using EasyMicroservices.Cores.Widgets;
 using EasyMicroservices.PlacesMicroservice.Contracts.Requests;
 using EasyMicroservices.PlacesMicroservice.Database.Entities;
@@ -8,17 +7,11 @@ using EasyMicroservices.PlacesMicroservice.Reporting.Database.Entities;
 
 namespace EasyMicroservices.PlacesMicroservice.Reporting.Widgets;
 
-public class PlacesReportingWidgetBuilder : ReportingBuilderWidget
+public class PlacesReportingWidgetBuilder : IWidgetBuilder
 {
-    readonly IDatabaseWidgetManager _widgetManager;
-    public PlacesReportingWidgetBuilder(IDatabaseWidgetManager widgetManager)
+    public void Build(IWidgetManager widgetManager)
     {
-        _widgetManager = widgetManager;
-    }
-
-    public override void Build()
-    {
-        _widgetManager.Register(new SimpleReportingEntityWidget<CityEntity, CityReportEntity, CreateCityRequestContract>());
-        _widgetManager.Register(new PlacesReportModuleDatabaseBuilder());
+        widgetManager.Register(new SimpleReportingEntityWidget<CityEntity, CityReportEntity, CreateCityRequestContract>());
+        widgetManager.Register(new PlacesReportModuleDatabaseBuilder());
     }
 }

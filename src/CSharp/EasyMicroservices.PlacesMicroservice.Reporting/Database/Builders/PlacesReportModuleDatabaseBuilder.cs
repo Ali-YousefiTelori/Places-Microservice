@@ -1,6 +1,7 @@
 ﻿using EasyMicroservices.Cores.Database.Widgets;
 using EasyMicroservices.PlacesMicroservice.Reporting.Database.Entities;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace EasyMicroservices.PlacesMicroservice.Reporting.Database.Builders;
 public class PlacesReportModuleDatabaseBuilder : DatabaseBuilderWidget<ModelBuilder>
