@@ -1,6 +1,6 @@
 ﻿using EasyMicroservices.Cores.Database.Schemas;
 
-namespace EasyMicroservices.PlacesMicroservice.Database.Schemas
+namespace EasyMicroservices.PlacesMicroservice.Schemas
 {
     public class CountrySchema : FullAbilitySchema
     {

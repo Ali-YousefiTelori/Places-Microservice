@@ -1,5 +1,5 @@
 ﻿using EasyMicroservices.Cores.Interfaces;
-using EasyMicroservices.PlacesMicroservice.Database.Schemas;
+using EasyMicroservices.PlacesMicroservice.Schemas;
 
 namespace EasyMicroservices.PlacesMicroservice.Database.Entities
 {

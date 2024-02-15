@@ -1,12 +1,12 @@
-﻿using EasyMicroservices.Cores.Relational.EntityFrameworkCore;
+﻿using EasyMicroservices.Cores.Database.Interfaces;
+using EasyMicroservices.Cores.Relational.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 namespace EasyMicroservices.PlacesMicroservice
 {
     public class DatabaseBuilder : EntityFrameworkCoreDatabaseBuilder
     {
-        public DatabaseBuilder(IConfiguration configuration) : base(configuration)
+        public DatabaseBuilder(IConfiguration configuration, IDatabaseWidgetManager widgetManager) : base(configuration, widgetManager)
         {
         }
 

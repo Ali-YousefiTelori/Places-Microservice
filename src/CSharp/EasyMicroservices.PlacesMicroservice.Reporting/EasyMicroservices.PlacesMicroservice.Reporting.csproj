@@ -1,5 +1,5 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-  
+<Project Sdk="Microsoft.NET.Sdk">
+
   <Choose>
     <When Condition="$(SolutionFileName.Contains('-net'))">
       <PropertyGroup>
@@ -12,19 +12,14 @@
       </PropertyGroup>
     </Otherwise>
   </Choose>
-  
-  <PropertyGroup>
-    <RootNamespace>EasyMicroservices.PlacesMicroservice</RootNamespace>
-  </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Contracts\Requests\Filters\" />
-    <Folder Include="Contracts\Responses\" />
-    <Folder Include="DataTypes\" />
+    <Folder Include="Contracts\" />
+    <Folder Include="Logics\" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EasyMicroservices.PlacesMicroservice.Schemas\EasyMicroservices.PlacesMicroservice.Schemas.csproj" />
+    <ProjectReference Include="..\EasyMicroservices.PlacesMicroservice.Database\EasyMicroservices.PlacesMicroservice.Database.csproj" />
   </ItemGroup>
 
 </Project>
